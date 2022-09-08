@@ -12,11 +12,11 @@ afterEach(async () => {
 }, timeout);
 
 test("initially nothing in password field", async () =>{
-	await expect(() => browser.getElement())
+	await expect(() => browser.getElement(username))
 });
 
 test("initially nothing in username field", async () =>{
-	await expect(() => browser.getElement())
+	await expect(() => browser.getElement(password))
 })
 
 test("Check there is a submit button", async () => {	
@@ -26,10 +26,13 @@ test("Check there is a submit button", async () => {
 })
 
 test("Correct Password and Username", async () => {
-	const user = driver.findElement(by.id(""));
-	const password = driver.findElement(by.id(""));
+	const user = driver.findElement(by.id("username"));
+	const password = driver.findElement(by.id("password"));
+
 	user.sendKeys("admin");
 	password.sendKeys("HelloWorld");
+
+    driver.findElement(by.id(Login())).click;
 })
 
 test("Empty fields login", async () => {
