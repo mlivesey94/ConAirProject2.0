@@ -46,7 +46,7 @@ body:
     validations:
       required: true
   - type: dropdown
-       id: Severity
+    id: Severity
     attributes:
       label: How severe is the bug?
       description: 0 being not severe and 10 being critical
