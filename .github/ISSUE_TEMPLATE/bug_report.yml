@@ -45,3 +45,51 @@ body:
        - 2.1.0
     validations:
       required: true
+  - type: dropdown
+       id: Severity
+    attributes:
+      label: How severe is the bug?
+      description: 0 being not severe and 10 being critical
+      options:
+       - 0
+       - 1
+       - 2
+       - 3
+       - 4
+       - 5
+       - 6
+       - 7
+       - 8
+       - 9
+       - 10
+    validations:
+      required: true
+   - type: dropdown
+      id: Urgency
+    attributes:
+      label: How urgent is the bug?
+      description: 1 being most urgent and 4 being not urgent
+      options:
+       - 1
+       - 2
+       - 3
+       - 4
+    validations:
+      required: true
+  - type: textarea
+    id: UUID
+    attributes:
+      label: UUID 
+      description: Please include a UUID of the bug and include a UUID of the story UUID
+      placeholder: Please write the steps in a list form
+    validations:
+      required: true
+   - type: textarea
+    id: Date
+    attributes:
+      label: Date
+      description: Date that the bug was found
+      placeholder: Please write the steps in a list form
+    validations:
+      required: true
+
