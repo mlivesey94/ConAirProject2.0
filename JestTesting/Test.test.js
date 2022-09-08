@@ -1,4 +1,4 @@
-const Browser = require("./Browser");
+const Browser = require("./browser");
 const browser = new Browser();
 const timeout = 20000;
 

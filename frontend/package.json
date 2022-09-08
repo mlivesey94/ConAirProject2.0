@@ -12,6 +12,7 @@
     "@rollup/plugin-alias": "^3.1.9",
     "@rollup/plugin-commonjs": "^22.0.2",
     "@rollup/plugin-node-resolve": "^13.3.0",
+    "jest": "^29.0.2",
     "rollup": "^2.78.0",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-livereload": "^2.0.5",
@@ -22,5 +23,10 @@
     "svelte": "^3.49.0",
     "svelte-preprocess": "^4.10.7",
     "uuid": "^8.3.2"
-  }
+  },
+  "main": "Test.test.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
