@@ -1,0 +1,227 @@
+{
+	"info": {
+		"_postman_id": "c9eac953-1931-4189-bf9f-b21c36922e3d",
+		"name": "UserStory: 8e1b4122",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22962772"
+	},
+	"item": [
+		{
+			"name": "Create  a new customer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function(){\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n     {\r\n        \"name\": \"Matt\",\r\n        \"uuid\": \"cadc942d-547a-4a29-b6e0-8ce6e6139552\"\r\n    }\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/domains/7bd996ad-79f9-4197-ac33-8ef5181899af/customers/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"domains",
+						"7bd996ad-79f9-4197-ac33-8ef5181899af",
+						"customers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all customers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json();\r",
+							"pm.test('Number of customers = ' + data.length, function () {\r",
+							"    pm.expect(data.length).to.equal(5);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/domains/7bd996ad-79f9-4197-ac33-8ef5181899af/customers/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"domains",
+						"7bd996ad-79f9-4197-ac33-8ef5181899af",
+						"customers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a single customer based on UUID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Name should be Matt\", () => {\r",
+							"    const responseJson = pm.response.json()\r",
+							"    pm.expect(responseJson.name).to.be.eql(\"Matt\");\r",
+							"    pm.expect(responseJson.uuid).to.be.eql(\"cadc942d-547a-4a29-b6e0-8ce6e6139552\");\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/domains/7bd996ad-79f9-4197-ac33-8ef5181899af/customers/cadc942d-547a-4a29-b6e0-8ce6e6139552",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"domains",
+						"7bd996ad-79f9-4197-ac33-8ef5181899af",
+						"customers",
+						"cadc942d-547a-4a29-b6e0-8ce6e6139552"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a customer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful Delete request\", function(){\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/domains/7bd996ad-79f9-4197-ac33-8ef5181899af/customers/cadc942d-547a-4a29-b6e0-8ce6e6139552",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"domains",
+						"7bd996ad-79f9-4197-ac33-8ef5181899af",
+						"customers",
+						"cadc942d-547a-4a29-b6e0-8ce6e6139552"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get deleted customer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Delete doesnt return UUID\", function () {\r",
+							"    pm.expect(pm.response.text()).not.to.eql(\"cadc942d-547a-4a29-b6e0-8ce6e6139552\");\r",
+							"});\r",
+							"\r",
+							"var data = pm.response.json();\r",
+							"pm.test('Number of customers = ' + data.length, function () {\r",
+							"    pm.expect(data.length).to.equal(4);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/domains/7bd996ad-79f9-4197-ac33-8ef5181899af/customers/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"domains",
+						"7bd996ad-79f9-4197-ac33-8ef5181899af",
+						"customers",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

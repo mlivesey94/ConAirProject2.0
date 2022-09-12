@@ -1,0 +1,224 @@
+{
+	"info": {
+		"_postman_id": "3202b29c-631f-4860-879c-e8ae309b4370",
+		"name": "UserStory: e816f221",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22962772"
+	},
+	"item": [
+		{
+			"name": "Get all sites for a specific customer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY2Mjk4OTg3NSwiaWF0IjoxNjYyOTcxODc1fQ.Gb8DF3537SJwzpIRnWFqVX5-OMvlfFON_aob3ApQUje5fDVSvMECff3H4mdFS5ENegK3HrJH0OOiUl8MW37rFw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/domains/7bd996ad-79f9-4197-ac33-8ef5181899af/customers/27828019-4e08-42a1-a536-d773ecf83d4d/sites/ae22dffa-6939-4da2-bf43-ad64a324f088",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"domains",
+						"7bd996ad-79f9-4197-ac33-8ef5181899af",
+						"customers",
+						"27828019-4e08-42a1-a536-d773ecf83d4d",
+						"sites",
+						"ae22dffa-6939-4da2-bf43-ad64a324f088"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a specific site for a customer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY2Mjk4OTg3NSwiaWF0IjoxNjYyOTcxODc1fQ.Gb8DF3537SJwzpIRnWFqVX5-OMvlfFON_aob3ApQUje5fDVSvMECff3H4mdFS5ENegK3HrJH0OOiUl8MW37rFw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/domains/7bd996ad-79f9-4197-ac33-8ef5181899af/customers/27828019-4e08-42a1-a536-d773ecf83d4d/sites/8441d76f-1801-4f28-a323-7bb70d1d245d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"domains",
+						"7bd996ad-79f9-4197-ac33-8ef5181899af",
+						"customers",
+						"27828019-4e08-42a1-a536-d773ecf83d4d",
+						"sites",
+						"8441d76f-1801-4f28-a323-7bb70d1d245d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a new site for a customer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function(){\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY2Mjk4OTg3NSwiaWF0IjoxNjYyOTcxODc1fQ.Gb8DF3537SJwzpIRnWFqVX5-OMvlfFON_aob3ApQUje5fDVSvMECff3H4mdFS5ENegK3HrJH0OOiUl8MW37rFw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"address\": \"\",\r\n        \"name\": \"\",\r\n        \"uuid\": \"15ced67f-7ff7-4702-83a7-fecafac342cc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/domains/7bd996ad-79f9-4197-ac33-8ef5181899af/customers/27828019-4e08-42a1-a536-d773ecf83d4d/sites/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"domains",
+						"7bd996ad-79f9-4197-ac33-8ef5181899af",
+						"customers",
+						"27828019-4e08-42a1-a536-d773ecf83d4d",
+						"sites",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create site with multiple UUID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function(){\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY2Mjk4OTg3NSwiaWF0IjoxNjYyOTcxODc1fQ.Gb8DF3537SJwzpIRnWFqVX5-OMvlfFON_aob3ApQUje5fDVSvMECff3H4mdFS5ENegK3HrJH0OOiUl8MW37rFw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"address\": \"\",\r\n        \"name\": \"\",\r\n        \"uuid\": \"15ced67f-7ff7-4702-83a7-fecafac342cc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/domains/7bd996ad-79f9-4197-ac33-8ef5181899af/customers/27828019-4e08-42a1-a536-d773ecf83d4d/sites/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"domains",
+						"7bd996ad-79f9-4197-ac33-8ef5181899af",
+						"customers",
+						"27828019-4e08-42a1-a536-d773ecf83d4d",
+						"sites",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a site that has been created",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/domains/7bd996ad-79f9-4197-ac33-8ef5181899af/customers/27828019-4e08-42a1-a536-d773ecf83d4d/sites/15ced67f-7ff7-4702-83a7-fecafac342cc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"domains",
+						"7bd996ad-79f9-4197-ac33-8ef5181899af",
+						"customers",
+						"27828019-4e08-42a1-a536-d773ecf83d4d",
+						"sites",
+						"15ced67f-7ff7-4702-83a7-fecafac342cc"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
